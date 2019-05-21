@@ -22,3 +22,12 @@ message 3
 
 If you go side-by-side with the terminal windows you can type in the producer
 window and see the results appear in the consumer
+
+
+Use default to subscribe the stream from current time.
+```
+$ bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic test 
+```
+```
+message 3
+```
