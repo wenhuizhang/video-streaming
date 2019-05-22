@@ -62,7 +62,10 @@ Kafka clients up and running:
  
 OR 
 
- $ python ./producer/producer.py ./videos/Countdown1.mp4 
+ $ python ./producer/producer.py ./videos/Countdown1.mp4
  ```
+ 
+ ### 2.3 Test
+ Check video streaming at `http://0.0.0.0:5000/`
  
  
