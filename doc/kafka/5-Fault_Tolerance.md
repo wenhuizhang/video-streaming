@@ -1,4 +1,4 @@
-# 5. Fault Tolernace Test 
+# 5. Fault Tolerance Test 
 
 ## 5.1 Send some messages to our replicated topic, then kill the producer
 ```
