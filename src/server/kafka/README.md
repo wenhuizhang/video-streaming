@@ -2,23 +2,46 @@
 
 In this folder, installation and configuration files for Kafka are attached. 
 
+***Kafka 2.0.0 version works with java openjdk 8, unit tests might fail with other versions.***
 
 ##  1. Kafka Installation 
 
 This code is made for Unix-based systems such as Linux and Mac OSX.
 
 ###  1.1 Install the Java Development Kit (JDK)
-Install version 11 of OpenJDK
+Install version 8 of OpenJDK
 ``` 
 $ java -version 
 $ sudo apt install default-jre
-$ sudo apt install openjdk-11-jre-headless
+$ sudo apt install openjdk-8-jre-headless
 $ java -version
 
 $ javac -version
-$ sudo apt install openjdk-11-jre-headless
+$ sudo apt install openjdk-8-jre-headless
 $ sudo apt install default-jdk 
 $ javac -version 
+```
+
+#### In Case Have Other Java Versions
+
+Install the OpenJDK 8 from a PPA repository:
+```
+$ sudo add-apt-repository ppa:openjdk-r/ppa
+```
+Update the system package cache and install:
+```
+$ sudo apt-get update
+$ sudo apt-get install openjdk-8-jdk
+```
+If you have more than one Java version installed on your system use the following command to switch versions:
+```
+    sudo update-alternatives --config java
+
+    java -version
+
+    openjdk version "1.8.0_72-internal"
+    OpenJDK Runtime Environment (build 1.8.0_72-internal-b05)
+    OpenJDK 64-Bit Server VM (build 25.72-b05, mixed mode)
 ```
 
 
