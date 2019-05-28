@@ -48,12 +48,15 @@ If you have more than one Java version installed on your system use the followin
 ### 1.2 Download latest version from `https://kafka.apache.org/downloads`
 Download the binary pack:
 ```
+// kafka 2.0.0 works with openjdk8, scala 11
+$ wget https://archive.apache.org/dist/kafka/2.0.0/kafka_2.11-2.0.0.tgz
+// kafka 2.2.0 work with openjdk 11, scala 12
 $ wget http://mirror.olnevhost.net/pub/apache/kafka/2.2.0/kafka_2.12-2.2.0.tgz
 ```
 Then Unpack latest version
 ```
-tar -xzf kafka_2.12-2.2.0.tgz
-cd kafka_2.12-2.2.0
+tar -xzf kafka_2.12-2.0.0.tgz
+cd kafka_2.12-2.0.0
 ```
 
 ### 1.3 Start Zookeeper
