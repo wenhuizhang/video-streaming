@@ -1,4 +1,4 @@
-# Installation and Configuration for Kafka
+# Installation and Configuration for Kafka (Binary Version)
 
 In this folder, installation and configuration files for Kafka are attached. 
 
