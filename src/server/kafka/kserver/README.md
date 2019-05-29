@@ -119,21 +119,27 @@ OS:           Linux 4.8.0-58-lowlatency amd64
 
 ```
 
-### 1.3 Compile and Install Kafka
+### 1.3 Install Scala
+```
+$ wget https://downloads.lightbend.com/scala/2.12.8/scala-2.12.8.deb
+$ sudo dpkg -i scala-2.12.8.deb 
+$ scala --version 
+```
+### 1.4 Compile and Install Kafka
 
 Download 2.0.0 version from `https://github.com/apache/kafka.git`
 
-#### 1.3.1 Download the binary pack:
+#### 1.4.1 Download the binary pack:
 ```
 // kafka 2.0.0 works with openjdk8, scala 2.12
 $ git clone https://github.com/apache/kafka.git
 ```
-#### 1.3.2 Then checkout branch 2.0.0
+#### 1.4.2 Then checkout branch 2.0.0
 ```
 $ cd kafka
 $ git checkout 2.0.0
 ```
-### 1.3.3 Compile and Unit Test 
+### 1.4.3 Compile and Unit Test 
 
 First bootstrap and download the wrapper ###
 ```
@@ -199,12 +205,12 @@ $ ./gradlew clean
 
 
 
-### 1.4 Start Zookeeper
+### 1.5 Start Zookeeper
 ```
 $ bin/zookeeper-server-start.sh config/zookeeper.properties
 ```
 
-### 1.5 Start Kafka Server
+### 1.6 Start Kafka Server
 ```
 $ bin/kafka-server-start.sh config/server.properties
 ```
