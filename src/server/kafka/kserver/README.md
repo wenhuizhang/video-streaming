@@ -1,5 +1,5 @@
 
-# Installation and Configuration for Kafka (Source Code Version)
+# Installation of Kafka (Source Code Version)
 
 In this folder, installation and configuration files for Kafka are attached. 
 
