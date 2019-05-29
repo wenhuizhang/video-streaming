@@ -8,7 +8,7 @@ In this folder, installation and configuration files for Kafka are attached.
 - Java Openjdk 8
 - Gradle 5.0 
 
-Where our ***~/.bashrc *** as follows:
+Where our ***~/.bashrc*** as follows:
 ```
 # original PATH
 export PATH=/home/wenhui/bin:/home/wenhui/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/sbin:/snap/bin
