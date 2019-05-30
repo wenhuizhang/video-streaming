@@ -1,8 +1,10 @@
 import datetime
+import time
 from flask import Flask, Response, render_template
 from kafka import KafkaConsumer
 
 # Fire up the Kafka Consumer
+
 topic = "distributed-video1"
 
 consumer = KafkaConsumer(
@@ -36,6 +38,7 @@ def get_video_stream():
     for msg in consumer:
         yield (b'--frame\r\n'
                b'Content-Type: image/jpg\r\n\r\n' + msg.value + b'\r\n\r\n')
-
+        # print("get")
+        print("frame get time, %.20f" % time.time())
 if __name__ == "__main__":
     app.run(host='0.0.0.0', debug=True)
