@@ -96,7 +96,7 @@ If you have more than one Java version installed on your system use the followin
 Download the binary pack:
 ```
 // kafka 2.0.0 works with openjdk8, scala 12
-$ wget https://archive.apache.org/dist/kafka/2.0.0/kafka_2.11-2.0.0.tgz
+$ wget https://archive.apache.org/dist/kafka/2.0.0/kafka_2.12-2.0.0.tgz
 ```
 Then Unpack latest version
 ```
