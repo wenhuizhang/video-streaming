@@ -1,7 +1,6 @@
 import sys
 import time
 import cv2
-import threading
 from kafka import KafkaProducer
 
 topic = "distributed-video1"
@@ -17,15 +16,11 @@ def publish_video(video_file):
     producer = KafkaProducer(bootstrap_servers='localhost:9092')
 
     # Open file
-    print('hello')
-    print("time start video engine %.20f" % time.time())
     video = cv2.VideoCapture(video_file)
-    print("time end video engine %.20f" % time.time())
     
-    print('publishing video..')
+    print('publishing video...')
 
     while(video.isOpened()):
-        print("%.20f" % time.time())
         success, frame = video.read()
 
         # Ensure file was read successfully
@@ -38,9 +33,8 @@ def publish_video(video_file):
 
         # Convert to bytes and send to kafka
         producer.send(topic, buffer.tobytes())
-        print("%.20f" % time.time())
-        #time.sleep(0.2)
-    
+
+        # time.sleep(0.2)
     video.release()
     print('publish complete')
 
@@ -54,29 +48,23 @@ def publish_camera():
     producer = KafkaProducer(bootstrap_servers='localhost:9092')
 
     
-    print("time start video engine %.20f" % time.time())
     camera = cv2.VideoCapture(0)
-    print("time end video engine %.20f" % time.time())
     try:
         while(True):
-            t0 = threading.Thread(target=pub_one_frame, args=(camera, topic, producer))
-            t0.start()
-            t0.join()
+            success, frame = camera.read()
+        
+            ret, buffer = cv2.imencode('.jpg', frame)
+            producer.send(topic, buffer.tobytes())
+            print("frame send time, %.20f" % time.time())
+            # Choppier stream, reduced load on processor
+            # time.sleep(0.2)
+
     except:
         print("\nExiting.")
         sys.exit(1)
+
     
     camera.release()
-
-def pub_one_frame(camera, topic, producer):
-    print("frame start %.20f" % time.time())
-    success, frame = camera.read()
-    ret, buffer = cv2.imencode('.jpg', frame)
-    producer.send(topic, buffer.tobytes())
-    print("frame end %.20f" % time.time())
-    # Choppier stream, reduced load on processor
-    # time.sleep(0.2)
-
 
 
 if __name__ == '__main__':
@@ -90,3 +78,4 @@ if __name__ == '__main__':
     else:
         print("publishing feed!")
         publish_camera()
+
