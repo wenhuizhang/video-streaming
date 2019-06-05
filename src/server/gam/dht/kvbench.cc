@@ -21,8 +21,8 @@ constexpr uint32_t KEY_SIZE = 100;
 constexpr uint32_t REPORT = 100000;
 
 int is_master = 0;
-const char* ip_master = "10.10.10.119"; //get_local_ip("eth0").c_str();
-const char* ip_worker = "localhost"; // get_local_ip("eth0").c_str();
+const char* ip_master = "10.10.0.16"; //get_local_ip("eth0").c_str();
+const char* ip_worker = "10.10.0.15"; // get_local_ip("eth0").c_str();
 int port_master = 9991;
 int port_worker = 9992;
 int no_thread = 1;
@@ -32,7 +32,7 @@ int val_size = 32;
 int cache_th = 30;
 int client_id = 0;
 int iter = 40000;
-const char *ycsb_dir = "/data/caiqc/zipf";
+const char *ycsb_dir = "/data/wenhui/zipf";
 
 pthread_t *threads;
 pthread_mutex_t cnt_mutex = PTHREAD_MUTEX_INITIALIZER;    
