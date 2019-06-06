@@ -15,10 +15,23 @@ paper](#paper).
 
 # Build & Usage
 ## Prerequisite
-1. `libverbs`
-2. `boost thread`
-3. `boost system`
-4. `gcc 4.8.4+`
+
+1. libibverbs and boost (system and thread)
+```
+$ sudo apt-get install libibverbs-dev
+$ sudo apt-get install libboost-all-dev
+// sudo apt-get install libboost-dev
+// sudo apt-get install libboost-thread-dev
+```
+2. gcc 4.8.4+
+
+```
+sudo apt-get install python-software-properties
+sudo add-apt-repository ppa:ubuntu-toolchain-r/test
+sudo apt-get update
+sudo apt-get install gcc-4.8
+sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.8 50
+```
 
 ## GAM Core
 First build `libcuckoo` in the `lib/libcuckoo` directory by following the
