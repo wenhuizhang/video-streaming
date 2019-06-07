@@ -45,7 +45,7 @@ def get_video_stream():
     them to a Flask-readable format.
     """
     while True:
-        print message['data']
+        # print message['data']
         yield (b'--frame\r\n'
                b'Content-Type: image/jpg\r\n\r\n' + message['data'] + b'\r\n\r\n')
         # print("get")
