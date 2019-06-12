@@ -4,6 +4,7 @@ Package bench provides a generic framework for performing latency benchmarks.
 package bench
 
 import (
+	"fmt"
 	"context"
 	"math"
 	"sync"
@@ -228,6 +229,7 @@ func (c *connectionBenchmark) runRateLimited() (time.Duration, error) {
 			before := time.Now()
 			err := c.requester.Request()
 			latency := time.Since(before).Nanoseconds()
+			fmt.Println(latency)
 			if err != nil {
 				if err := c.errorHistogram.RecordCorrectedValue(latency, interval); err != nil {
 					return 0, err
@@ -265,6 +267,7 @@ func (c *connectionBenchmark) runFullThrottle() (time.Duration, error) {
 		before := time.Now()
 		err := c.requester.Request()
 		latency := time.Since(before).Nanoseconds()
+		fmt.Println(latency)
 		if err != nil {
 			if err := c.errorHistogram.RecordValue(latency); err != nil {
 				return 0, err
