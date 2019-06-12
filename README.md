@@ -1,2 +1,2 @@
 # video360
-Scripts and Code for Video 360 Project
+Scripts and Code for Video Streaming Project
