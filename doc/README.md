@@ -1,6 +1,9 @@
-# Video 360 Project Introduction
+# Video Streaming Project Introduction
 
-In this project, we use Kafka w/ Zookeeper for stream video processing. 
+In this project, we use:
+- Kafka w/ Zookeeper for stream video processing
+- Redis for stream video processing
+
 
 ## Demo Setup
 
