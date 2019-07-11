@@ -13,7 +13,7 @@ import (
 func main() {
 	r := &requester.RedisPubSubRequesterFactory{
 		URL:         "10.10.0.14:6379",
-		PayloadSize: 1843200,
+		PayloadSize: 4147200,
 		Channel:     "benchmark",
 	}
 
